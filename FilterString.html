@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="/Users/intern6/Desktop/AngularJS/angular.min.js"></script>
+    <script src="/Users/intern6/Desktop/AngularJS/FilterString.js"></script>
+    <style>
+        table,th,td{
+            border:1px solid grey;
+            border-collapse: collapse;
+            padding:5px;
+        }
+            table tr:nth-child(odd){
+                background-color: #f1f1f1;
+                
+            }
+             table tr:nth-child(even){
+                background-color: #ffffff;
+                
+            }
+        </style>
+        </head>
+    <body>
+         <div ng-app="myApp" ng-controller="myController">
+             <p>Enter filter string(non-strict mode):<input type="text" ng-model="myTextFilter"></p>
+             <table>
+                <tr ng-repeat="student in students |filter:myTextFilter |orderBy:'name'">
+                    <td>{{ (student.name) }}</td>
+                    <td align="right">{{student.age}}</td>
+                 </tr>
+             </table>
+             
+             <hr>
+                 <p>Enter filter string(strict mode):<input type="text" ng-model="myTextFilter"></p>
+             <table>
+                <tr ng-repeat="student in students |filter:myTextFilter:true |orderBy:'name'">
+                    <td>{{ (student.name) }}</td>
+                    <td align="right">{{student.age}}</td>
+                 </tr>
+             </table>
+        </div> 
+    </body>
+</html>

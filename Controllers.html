@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <script src="/Users/intern6/Desktop/AngularJS/angular.min.js"></script>
+        <script src="/Users/intern6/Desktop/AngularJS/app.js"></script>
+    </head>
+    <body ng-app="myApp">
+        <div ng-controller="personController">
+            First Name: <input type="text" ng-model="firstName"><br/>
+        Last Name:<input type="text" ng-model="lastName"><br/>
+    Full Name of Person is: {{ getFullName() }}
+        </div>
+    </body>
+</html>

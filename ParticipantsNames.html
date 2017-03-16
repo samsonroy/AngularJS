@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script type="text/javascript" src="/Users/intern6/Desktop/AngularJS/angular.min.js"></script>
+    </head>
+    <body ng-app="">
+    <div ng-init="participants=['Gajendra', 'veena', 'Vishwas', 'samson']">
+        <p>
+            Displaying all the participants:</p>
+            <ol>
+        <li ng-repeat="participant in participants">
+                {{ $index}}:{{participant}}
+                </li>
+        </ol>
+        </div>
+        
+        <div ng-app="" ng-init="ageOfParticipants=[12,34,52,21]">
+        <p>
+            Display all the age of Participants:</p>
+            <ol>
+                <li ng-repeat="ageOfParticipant in ageOfParticipants">
+                {{ $index}}:{{ageOfParticipant}}
+                </li>
+            </ol>
+        </div>
+        
+        <div ng-app="" ng-init="ageOfParticipants=[12,34,52,21]">
+        <p>
+            Display all the age of Participants:</p>
+            <ol>
+                <li ng-repeat="ageOfParticipant in ageOfParticipants">
+                {{ageOfParticipant}}
+                </li>
+            </ol>
+        </div>
+    </body>
+</html>

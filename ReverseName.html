@@ -1,0 +1,17 @@
+<html>
+<head>
+    <script src="/Users/intern6/Desktop/AngularJS/angular.min.js"></script>
+    <script src="/Users/intern6/Desktop/AngularJS/ReverseName.js"></script>
+    </head>
+    <body ng-app="myApp">
+    <div ng-controller="myController">
+        <br>First Name:
+        <input type="text" ng-model="firstName">
+        <br>Last Name:
+        <input type="text" ng-model="lastName">
+        <br> Full Name: {{ getFullName() }}
+        <br>
+        <button ng-click="reverseName()">Reverse first and last Name</button>
+        </div>
+    </body>
+</html>

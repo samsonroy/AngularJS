@@ -1,0 +1,17 @@
+<html>
+  <head>
+      <title>Multiplication Table</title>
+      <script src="/Users/intern6/Desktop/AngularJS/angular.min.js"></script>
+      <script src="/Users/intern6/Desktop/AngularJS/multiply.js"></script>
+  </head>
+  <body ng-app="myApp">
+      <div ng-controller="myController">
+          <p>Multiplication Table for <input type="text" ng-model="num"></p>
+          <ul>
+              <li ng-repeat="n in [1,2,3,4,5,6,7,8,9,10]">
+                  {{num}} * {{n}} = {{computeTable(num,n)}}
+              </li>
+          </ul>
+      </div>
+  </body>
+</html>n
