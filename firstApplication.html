@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="crudapp">
+    <head><title>CRUD Example</title>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="/Users/intern6/Desktop/AngularJS/angular.min.js">
+        </script>
+        <link rel="stylesheet" href="/Users/intern6/Desktop/AngularJS/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <script src="/Users/intern6/Desktop/AngularJS/app.js"></script>
+    </head>
+    <body ng-controller="MainCtrl as main">
+        <div class="container">
+         <h3>Address Book</h3>
+            <p>
+                <label>First Name</label>
+                <input type="text" ng-model="main.person.firstname"/>
+                <label>Last Name</label>
+                <input type="text" ng-model="main.person.lastname"/>
+                <label>City</label>
+                <input type="text" ng-model="main.person.city"/>
+            </p>
+            <div clss="row">
+                <div class="col-md-5">
+                    <button class="btn btn-primary" ng-click="main.addClickHandler()">
+                    Add
+                    </button>
+                     <button class="btn btn-primary" ng-click="main.resetClickHandler()">
+                    Clear Form
+                    </button>
+                    <p></p>
+                </div>
+                <div class="col-md-5">
+                <label>Search: </label>
+                    <input type="text" ng-model="main.search">
+                </div>
+            </div>
+            <p>
+            <div class="row" ng-show="main.addresses">
+            <table class="table table-bordered table-striped table-condensed">
+                <thread>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>City</th>
+                        <th>actions</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <tr ng-repeat="address in main.addresses | filter:main.search">
+                    <td ng-bind="address.firstname"></td>
+                    <td ng-bind="address.lastname"></td>
+                    <td ng-bind="address.city"></td>
+                    <td><button class="btn btn-primary" ng-click="main.editClickHandler(address)">
+                     Edit
+                    </button>
+                    <button class="btn btn-danger" ng-click="main.removeClickHandler(address)">
+                    Remove
+                    </button>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        </p>
+</div>
+    </body>
+</html>
